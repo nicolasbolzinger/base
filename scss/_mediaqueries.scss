@@ -1,0 +1,16 @@
+/* UTILISATION
+@include device(clé) {
+  display: none;
+} */
+$breakpoints : (
+  'mobile' : 500px,
+  'tablette' : 800px,
+  'laptop' : 1100px,
+  'moniteur' : 1500px,
+);
+
+@mixin device($breakpoint) {
+  @media screen and (min-width: #{map-get($breakpoints, $breakpoint)}) {
+    @content;
+  }
+}

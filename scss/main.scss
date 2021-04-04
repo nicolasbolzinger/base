@@ -1,0 +1,6 @@
+//* Import de normalize.css
+// @import 'normalize';
+//* Gère l'accessibilité CSS globale
+@import 'accessibilite';
+//* Import des mediaqueries - Gestion des breakpoints directement dans le fichier _mediaqueries.scss
+@import 'mediaqueries';
