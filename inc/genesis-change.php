@@ -19,7 +19,7 @@ add_theme_support( 'genesis-responsive-viewport' );
 add_theme_support(
   'genesis-structural-wraps',
   array(
-    'menu-primary',
+    // 'menu-primary',
     'menu-secondary',
     // 'site-inner',
     'footer-widgets',

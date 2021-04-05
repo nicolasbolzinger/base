@@ -1,17 +1,25 @@
-let parentItems, i;
+// Affiche le sous-menu
 
-parentItems = document.querySelectorAll('.menu-item-has-children');
+// Storage du li parent
+let parentItem = document.querySelectorAll('.menu-item-has-children');
 
-for (i = 0; i < parentItems.length; i++) {
-    let subMenu = parentItems[i].querySelector('.sub-menu');
-    parentItems[i].addEventListener('click', event => {
-        event.stopPropagation();
+// Boucle pour chaque li
+for ( i = 0; i < parentItem.length; i++ ) {
+    // Storage de la balise a du li parent
+    let parentItemLink = parentItem[i].querySelector('a');
+    // Storage du sous-menu
+    let subMenu = parentItem[i].querySelector('.sub-menu');
+
+    // Evènement clic uniquement sur la balise a
+    parentItemLink.addEventListener('click', event => {
+
         event.preventDefault();
-        if ( subMenu.style.display === 'block' ) {
-            subMenu.style.display = 'none';
-        } else {
-            subMenu.style.display = 'block';
-        }
-    });
 
+        if ( subMenu.style.display === 'block' ) {
+            subMenu.style.display = 'none'
+        } else {
+            subMenu.style.display = 'block'
+        }
+
+    })
 }

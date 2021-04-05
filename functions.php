@@ -31,7 +31,7 @@ function global_enqueues() {
   // wp_enqueue_style( 'google-fonts', 'URL_DES_POLICES' );
 
   //* Charge le fichier main.js dans le footer
-  wp_enqueue_script( 'mainJs' , get_stylesheet_directory_uri() . '/js/main.min.js', array(), false, true );
+  wp_enqueue_script( 'mainJs' , get_stylesheet_directory_uri() . '/js/main.js', array(), false, true );
 
 
 }
