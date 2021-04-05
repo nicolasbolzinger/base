@@ -14,10 +14,10 @@ function global_enqueues() {
 
     wp_dequeue_style( 'dashicon' );
 
-    //* Déplace jquery dans footer
+    //* Empèche le load de jquery.js
     wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
-    wp_enqueue_script( 'jquery' );
+    //* Empeche le load de wp-embed.js
+    wp_deregister_script( 'wp-embed' );
 
   };
 
