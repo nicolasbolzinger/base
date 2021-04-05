@@ -5,6 +5,16 @@ remove_action( 'genesis_after_header', 'genesis_do_nav' );
 //* Ajoute la navigation dans le bloc .site-header
 add_action( 'genesis_header', 'genesis_do_nav' );
 
+
+//* Change l'ID de la navigation principale
+add_filter( 'genesis_attr_nav-primary', 'id_nav_principale', 20 );
+function id_nav_principale( $attributes ) {
+
+		$attributes['id']  = 'main-nav';
+
+	return $attributes;
+}
+
 //* Modifie class des items dans le menu
 add_filter( 'nav_menu_css_class', 'clean_nav_menu_classes', 5 );
 function clean_nav_menu_classes( $classes ) {
@@ -40,4 +50,3 @@ function clean_nav_menu_classes( $classes ) {
 
 	return $classes;
 }
-

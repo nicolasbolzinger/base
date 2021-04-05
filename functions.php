@@ -16,8 +16,11 @@ function global_enqueues() {
 
     //* Déplace jquery dans footer
     wp_deregister_script( 'jquery' );
-    wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
-    wp_enqueue_script( 'jquery' );
+    //wp_register_script( 'jquery', includes_url( '/js/jquery/jquery.js' ), false, NULL, true );
+    //wp_enqueue_script( 'jquery' );
+
+    //* Empèche le load de wp-embed.js
+    wp_deregister_script( 'wp-embed' );
 
   };
 
