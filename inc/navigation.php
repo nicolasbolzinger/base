@@ -40,4 +40,3 @@ function clean_nav_menu_classes( $classes ) {
 
 	return $classes;
 }
-
