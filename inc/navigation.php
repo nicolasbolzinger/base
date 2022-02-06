@@ -3,20 +3,32 @@
 //* Supprime la navigation après le bloc .site-header
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
 //* Ajoute la navigation dans le bloc .site-header
-add_action( 'genesis_header', 'genesis_do_nav' );
+// add_action( 'genesis_header', 'genesis_do_nav' );
+add_action( 'genesis_header', 'accessibleNav');
 
-
-//* Change l'ID de la navigation principale
-add_filter( 'genesis_attr_nav-primary', 'id_nav_principale', 20 );
-function id_nav_principale( $attributes ) {
-
-    if ( 'primary' !== $args->theme_location ) {
-		$attributes['id'] = 'main-nav';
-	}
-
-	return $attributes;
+function accessibleNav() {
+    $buttonClose = '<button id="menuClose" class="menu-button">X</button>';
+    $buttonOpen = '<button id="menuOpen" class="menu-button">O</button>';
+    $items_wrap = $buttonOpen;
+    $items_wrap .= '<ul id="%1$s" class="%2$s">%3$s';
+    $items_wrap .= sprintf( '<li id="">%1$s</li></ul>', $buttonClose );
+    wp_nav_menu( array(
+        'theme_location'    => 'menu-accessible',
+        'container'         => 'nav',
+        'container_class'   => 'nav-primary',
+        'container_id'      => 'main-nav',
+        'menu_class'        => 'menu',
+        'menu_id'           => 'nav-primary-list',
+        'items_wrap'        => $items_wrap
+    )
+ );
 }
 
+
+
+/* ----------------------------
+CLEAN UP
+-----------------------------*/
 
 //* Modifie class des items dans le menu
 add_filter( 'nav_menu_css_class', 'clean_nav_menu_classes', 5 );

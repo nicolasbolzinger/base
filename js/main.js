@@ -1,3 +1,18 @@
+// TOGGLE Menu
+
+let mainNavList = document.getElementById('nav-primary-list');
+let menuOpenBtn = document.getElementById('menuOpen');
+let menuCloseBtn = document.getElementById('menuClose');
+
+menuOpenBtn.addEventListener('click', event => {
+    if (mainNavList.style.display === 'block' ) {
+        mainNavList.style.display = 'none';
+    } else {
+        mainNavList.style.display = 'block';
+    }
+})
+
+
 // Affiche le sous-menu
 
 // Storage du li parent

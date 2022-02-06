@@ -61,6 +61,16 @@ function global_setup() {
 
 }
 
+/* -------------------------------------------
+
+# NAVIGATION INIT
+
+------------------------------------------- */
+function menuAccessible() {
+  register_nav_menu('menu-accessible',__( 'Menu Accessible' ));
+}
+add_action( 'init', 'menuAccessible' );
+
 
 /* -------------------------------------------
 
